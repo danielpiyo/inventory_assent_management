@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { AppRoutingModule } from './app-routing.module';
+import { routing } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { LoginService, AlertService } from './_service';
@@ -47,6 +47,7 @@ import { ReportsComponent } from './components/admin/reports/reports.component';
 import { AppSettings } from './shared/app.setting';
 import { LogsTrackComponent } from './components/admin/logs-track/logs-track.component';
 import { AdvancedCategoryComponent } from './components/admin/advanced-category/advanced-category.component';
+import { BnNgIdleService } from 'bn-ng-idle'; // import bn-ng-idle service
 
 
 
@@ -64,12 +65,12 @@ import { AdvancedCategoryComponent } from './components/admin/advanced-category/
   ],
   imports: [
     BrowserModule, HttpClientModule, BrowserAnimationsModule, PanelMenuModule,
-    AppRoutingModule, MaterialModule, FormsModule, ReactiveFormsModule, FlexLayoutModule,
+    routing, MaterialModule, FormsModule, ReactiveFormsModule, FlexLayoutModule,
     ToastModule, MessagesModule, MessageModule, ChartModule, NgScrollbarModule, NgxChartsModule
   ],
   entryComponents: [NewCategoryModal, NewStationModal, NewDepartmentModal,
                     NewSectionModal, NewEquipementModal, RepairEquipementModal],
-  providers: [LoginService, AlertService, MessageService,
+  providers: [LoginService, AlertService, MessageService, BnNgIdleService,
               StationService, DepartmentService, SectionService,
               CategoriesService, EquipementService, UsersService, UserGuard, AdminGuard, AppSettings],
   bootstrap: [AppComponent]

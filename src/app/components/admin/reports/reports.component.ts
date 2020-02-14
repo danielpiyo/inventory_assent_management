@@ -98,7 +98,7 @@ export class ReportsComponent implements OnInit {
     this.dataSourceEquipements.paginator = this.Eqpaginator;
     this.dataSourceEquipements.sort = this.Eqsort;
     this.getEquipements();
-    Object.assign(this.categoryDataChart);
+    // Object.assign(this.categoryDataChart);
   }
 
   getStationEquipemnt() {
